@@ -35,6 +35,8 @@ public class PlaceChess : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (goalManager.goaled) return;
+
         if (status != CellStatus.Empty) return;
 
         switch (turnManager.turn)

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class BoardGenerator : MonoBehaviour
 {
-    public float cellLength;
     public GameObject cellPrefab;
 
+    float cellLength = 1.15f;
     float zero;
 
     void Start()

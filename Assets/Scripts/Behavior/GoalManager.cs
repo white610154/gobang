@@ -3,6 +3,7 @@ using UnityEngine;
 public class GoalManager : MonoBehaviour
 {
     public GameObject[,] cells = new GameObject[19, 19];
+    public bool goaled = false;
 
     CellStatus status;
 
@@ -17,7 +18,10 @@ public class GoalManager : MonoBehaviour
             CheckRightCross(position)
         )
         {
-            Debug.Log(string.Format("{0} Wins!", status));
+            goaled = true;
+
+            EndGame endGame = GameObject.FindObjectOfType<EndGame>();
+            endGame.ShowWinnerWindow(status);
         }
     }
 
@@ -30,8 +34,6 @@ public class GoalManager : MonoBehaviour
 
     bool CheckHorizontal(Vector2Int p)
     {
-        Debug.Log("Check Horizontal");
-
         int count = 1;
 
         int i = 1;
@@ -58,8 +60,6 @@ public class GoalManager : MonoBehaviour
 
     bool CheckVertical(Vector2Int p)
     {
-        Debug.Log("Check Vertical");
-
         int count = 1;
 
         int i = 1;
@@ -86,8 +86,6 @@ public class GoalManager : MonoBehaviour
 
     bool CheckLeftCross(Vector2Int p)
     {
-        Debug.Log("Check Left Cross");
-
         int count = 1;
 
         int i = 1;
@@ -114,8 +112,6 @@ public class GoalManager : MonoBehaviour
 
     bool CheckRightCross(Vector2Int p)
     {
-        Debug.Log("Check Right Cross");
-
         int count = 1;
 
         int i = 1;
