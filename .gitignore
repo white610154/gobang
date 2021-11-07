@@ -3,6 +3,7 @@ Library# =============== #
 # =============== #
 Temp/
 Library/
+Gobang/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
